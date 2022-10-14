@@ -1,0 +1,1405 @@
+Analysis & Synthesis report for MIPS
+Thu Sep 17 07:15:32 2020
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |MIPS
+ 13. Parameter Settings for User Entity Instance: Register32Bits:ProgramCounter
+ 14. Parameter Settings for User Entity Instance: MemoryInstruction:InstructionMemory
+ 15. Parameter Settings for User Entity Instance: MUX5:muxWriteRegister
+ 16. Parameter Settings for User Entity Instance: RegisterBank:regBank
+ 17. Parameter Settings for User Entity Instance: MUX2:muxInULA
+ 18. Parameter Settings for User Entity Instance: MUX2:MUXSelectULA
+ 19. Parameter Settings for User Entity Instance: ULA:ULAUnity
+ 20. Parameter Settings for User Entity Instance: ULA:ULAUnity|SetLessThan:sltInstruction
+ 21. Parameter Settings for User Entity Instance: Memory:dataMemory
+ 22. Parameter Settings for User Entity Instance: MUX2:muxOutMemory
+ 23. Parameter Settings for User Entity Instance: MUX5:muxBeq
+ 24. Parameter Settings for User Entity Instance: MUX5:muxPC
+ 25. Port Connectivity Checks: "Memory:dataMemory"
+ 26. Port Connectivity Checks: "MUX2:muxInULA"
+ 27. Port Connectivity Checks: "MemoryInstruction:InstructionMemory"
+ 28. Post-Synthesis Netlist Statistics for Top Partition
+ 29. Elapsed Time Per Partition
+ 30. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Sep 17 07:15:32 2020       ;
+; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Revision Name                      ; MIPS                                        ;
+; Top-level Entity Name              ; MIPS                                        ;
+; Family                             ; Cyclone IV GX                               ;
+; Total logic elements               ; 4,662                                       ;
+;     Total combinational functions  ; 2,445                                       ;
+;     Dedicated logic registers      ; 2,370                                       ;
+; Total registers                    ; 2370                                        ;
+; Total pins                         ; 260                                         ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total GXB Receiver Channel PCS     ; 0                                           ;
+; Total GXB Receiver Channel PMA     ; 0                                           ;
+; Total GXB Transmitter Channel PCS  ; 0                                           ;
+; Total GXB Transmitter Channel PMA  ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                            ; MIPS               ; MIPS               ;
+; Family name                                                      ; Cyclone IV GX      ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.2%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                  ; Library ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------+---------+
+; MIPS.vhd                         ; yes             ; User VHDL File  ; /home/rafael/Documentos/MIPS/RafaelRutz/MIPS.vhd              ;         ;
+; Register32Bits.vhd               ; yes             ; User VHDL File  ; /home/rafael/Documentos/MIPS/RafaelRutz/Register32Bits.vhd    ;         ;
+; Register1Bit.vhd                 ; yes             ; User VHDL File  ; /home/rafael/Documentos/MIPS/RafaelRutz/Register1Bit.vhd      ;         ;
+; MUX5.vhd                         ; yes             ; User VHDL File  ; /home/rafael/Documentos/MIPS/RafaelRutz/MUX5.vhd              ;         ;
+; MUX2.vhd                         ; yes             ; User VHDL File  ; /home/rafael/Documentos/MIPS/RafaelRutz/MUX2.vhd              ;         ;
+; MIPSPackage.vhd                  ; yes             ; User VHDL File  ; /home/rafael/Documentos/MIPS/RafaelRutz/MIPSPackage.vhd       ;         ;
+; MemoryInstruction.vhd            ; yes             ; User VHDL File  ; /home/rafael/Documentos/MIPS/RafaelRutz/MemoryInstruction.vhd ;         ;
+; Memory.vhd                       ; yes             ; User VHDL File  ; /home/rafael/Documentos/MIPS/RafaelRutz/Memory.vhd            ;         ;
+; Control.vhd                      ; yes             ; User VHDL File  ; /home/rafael/Documentos/MIPS/RafaelRutz/Control.vhd           ;         ;
+; ULAControl2.vhd                  ; yes             ; User VHDL File  ; /home/rafael/Documentos/MIPS/RafaelRutz/ULAControl2.vhd       ;         ;
+; ULAControl.vhd                   ; yes             ; User VHDL File  ; /home/rafael/Documentos/MIPS/RafaelRutz/ULAControl.vhd        ;         ;
+; ULA.vhd                          ; yes             ; User VHDL File  ; /home/rafael/Documentos/MIPS/RafaelRutz/ULA.vhd               ;         ;
+; SetLessThan.vhd                  ; yes             ; User VHDL File  ; /home/rafael/Documentos/MIPS/RafaelRutz/SetLessThan.vhd       ;         ;
+; RegisterBank.vhd                 ; yes             ; User VHDL File  ; /home/rafael/Documentos/MIPS/RafaelRutz/RegisterBank.vhd      ;         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------+---------+
+
+
++---------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary ;
++--------------------------+------------------+
+; Resource                 ; Usage            ;
++--------------------------+------------------+
+; I/O pins                 ; 260              ;
+;                          ;                  ;
+; DSP block 9-bit elements ; 0                ;
+;                          ;                  ;
+; Maximum fan-out node     ; clk~input        ;
+; Maximum fan-out          ; 2370             ;
+; Total fan-out            ; 16798            ;
+; Average fan-out          ; 3.15             ;
++--------------------------+------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                               ;
++------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------------------------------------------------------+-------------------+--------------+
+; Compilation Hierarchy Node               ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                          ; Entity Name       ; Library Name ;
++------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------------------------------------------------------+-------------------+--------------+
+; |MIPS                                    ; 2445 (190)          ; 2370 (61)                 ; 0           ; 0            ; 0       ; 0         ; 0         ; 260  ; 0            ; |MIPS                                                        ; MIPS              ; work         ;
+;    |Control:ControlUnity|                ; 17 (17)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MIPS|Control:ControlUnity                                   ; Control           ; work         ;
+;    |MUX2:MUXSelectULA|                   ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MIPS|MUX2:MUXSelectULA                                      ; MUX2              ; work         ;
+;    |MUX2:muxInULA|                       ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MIPS|MUX2:muxInULA                                          ; MUX2              ; work         ;
+;    |MUX2:muxOutMemory|                   ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MIPS|MUX2:muxOutMemory                                      ; MUX2              ; work         ;
+;    |MUX5:muxPC|                          ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MIPS|MUX5:muxPC                                             ; MUX5              ; work         ;
+;    |MUX5:muxWriteRegister|               ; 12 (12)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MIPS|MUX5:muxWriteRegister                                  ; MUX5              ; work         ;
+;    |Memory:dataMemory|                   ; 720 (720)           ; 1024 (1024)               ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MIPS|Memory:dataMemory                                      ; Memory            ; work         ;
+;    |MemoryInstruction:InstructionMemory| ; 528 (528)           ; 768 (768)                 ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MIPS|MemoryInstruction:InstructionMemory                    ; MemoryInstruction ; work         ;
+;    |Register32Bits:ProgramCounter|       ; 0 (0)               ; 5 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MIPS|Register32Bits:ProgramCounter                          ; Register32Bits    ; work         ;
+;       |Register1Bit:\R32:0:regs|         ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MIPS|Register32Bits:ProgramCounter|Register1Bit:\R32:0:regs ; Register1Bit      ; work         ;
+;       |Register1Bit:\R32:1:regs|         ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MIPS|Register32Bits:ProgramCounter|Register1Bit:\R32:1:regs ; Register1Bit      ; work         ;
+;       |Register1Bit:\R32:2:regs|         ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MIPS|Register32Bits:ProgramCounter|Register1Bit:\R32:2:regs ; Register1Bit      ; work         ;
+;       |Register1Bit:\R32:3:regs|         ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MIPS|Register32Bits:ProgramCounter|Register1Bit:\R32:3:regs ; Register1Bit      ; work         ;
+;       |Register1Bit:\R32:4:regs|         ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MIPS|Register32Bits:ProgramCounter|Register1Bit:\R32:4:regs ; Register1Bit      ; work         ;
+;    |RegisterBank:regBank|                ; 672 (672)           ; 512 (512)                 ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MIPS|RegisterBank:regBank                                   ; RegisterBank      ; work         ;
+;    |ULA:ULAUnity|                        ; 228 (196)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MIPS|ULA:ULAUnity                                           ; ULA               ; work         ;
+;       |SetLessThan:sltInstruction|       ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MIPS|ULA:ULAUnity|SetLessThan:sltInstruction                ; SetLessThan       ; work         ;
+;    |ULAControl:ULACtrl|                  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MIPS|ULAControl:ULACtrl                                     ; ULAControl        ; work         ;
++------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------------------------------------------------------+-------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                       ;
++-------------------------------------------------+----------------------------------------+
+; Register name                                   ; Reason for Removal                     ;
++-------------------------------------------------+----------------------------------------+
+; word[6..10,15,20,25]                            ; Stuck at GND due to stuck port data_in ;
+; word[5]                                         ; Merged with word[14]                   ;
+; loadMemory                                      ; Merged with load                       ;
+; MemoryInstruction:InstructionMemory|memory~44   ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~76   ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~108  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~140  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~172  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~204  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~236  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~268  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~300  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~332  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~364  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~396  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~428  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~460  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~492  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~524  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~556  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~588  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~620  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~652  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~684  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~716  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~748  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~780  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~812  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~844  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~876  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~908  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~940  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~972  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~1004 ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~1036 ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~45   ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~77   ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~109  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~141  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~173  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~205  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~237  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~269  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~301  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~333  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~365  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~397  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~429  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~461  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~493  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~525  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~557  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~589  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~621  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~653  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~685  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~717  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~749  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~781  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~813  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~845  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~877  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~909  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~941  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~973  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~1005 ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~1037 ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~46   ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~78   ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~110  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~142  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~174  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~206  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~238  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~270  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~302  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~334  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~366  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~398  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~430  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~462  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~494  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~526  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~558  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~590  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~622  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~654  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~686  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~718  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~750  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~782  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~814  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~846  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~878  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~910  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~942  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~974  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~1006 ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~1038 ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~47   ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~79   ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~111  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~143  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~175  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~207  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~239  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~271  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~303  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~335  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~367  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~399  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~431  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~463  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~495  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~527  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~559  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~591  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~623  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~655  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~687  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~719  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~751  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~783  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~815  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~847  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~879  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~911  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~943  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~975  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~1007 ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~1039 ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~48   ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~80   ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~112  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~144  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~176  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~208  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~240  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~272  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~304  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~336  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~368  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~400  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~432  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~464  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~496  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~528  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~560  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~592  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~624  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~656  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~688  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~720  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~752  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~784  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~816  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~848  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~880  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~912  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~944  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~976  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~1008 ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~1040 ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~53   ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~85   ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~117  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~149  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~181  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~213  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~245  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~277  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~309  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~341  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~373  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~405  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~437  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~469  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~501  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~533  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~565  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~597  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~629  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~661  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~693  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~725  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~757  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~789  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~821  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~853  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~885  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~917  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~949  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~981  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~1013 ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~1045 ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~58   ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~90   ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~122  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~154  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~186  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~218  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~250  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~282  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~314  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~346  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~378  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~410  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~442  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~474  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~506  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~538  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~570  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~602  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~634  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~666  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~698  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~730  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~762  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~794  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~826  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~858  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~890  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~922  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~954  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~986  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~1018 ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~1050 ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~63   ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~95   ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~127  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~159  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~191  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~223  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~255  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~287  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~319  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~351  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~383  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~415  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~447  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~479  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~511  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~543  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~575  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~607  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~639  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~671  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~703  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~735  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~767  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~799  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~831  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~863  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~895  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~927  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~959  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~991  ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~1023 ; Stuck at GND due to stuck port data_in ;
+; MemoryInstruction:InstructionMemory|memory~1055 ; Stuck at GND due to stuck port data_in ;
+; RegisterBank:regBank|regBank~550                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~582                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~614                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~646                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~678                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~710                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~742                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~774                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~806                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~838                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~870                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~902                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~934                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~966                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~998                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1030               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~551                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~583                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~615                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~647                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~679                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~711                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~743                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~775                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~807                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~839                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~871                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~903                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~935                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~967                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~999                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1031               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~552                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~584                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~616                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~648                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~680                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~712                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~744                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~776                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~808                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~840                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~872                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~904                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~936                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~968                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1000               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1032               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~553                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~585                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~617                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~649                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~681                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~713                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~745                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~777                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~809                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~841                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~873                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~905                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~937                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~969                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1001               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1033               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~554                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~586                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~618                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~650                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~682                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~714                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~746                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~778                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~810                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~842                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~874                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~906                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~938                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~970                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1002               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1034               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~555                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~587                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~619                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~651                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~683                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~715                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~747                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~779                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~811                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~843                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~875                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~907                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~939                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~971                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1003               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1035               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~556                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~588                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~620                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~652                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~684                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~716                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~748                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~780                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~812                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~844                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~876                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~908                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~940                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~972                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1004               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1036               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~557                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~589                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~621                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~653                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~685                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~717                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~749                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~781                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~813                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~845                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~877                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~909                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~941                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~973                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1005               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1037               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~558                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~590                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~622                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~654                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~686                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~718                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~750                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~782                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~814                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~846                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~878                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~910                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~942                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~974                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1006               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1038               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~559                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~591                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~623                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~655                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~687                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~719                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~751                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~783                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~815                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~847                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~879                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~911                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~943                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~975                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1007               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1039               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~560                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~592                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~624                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~656                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~688                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~720                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~752                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~784                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~816                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~848                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~880                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~912                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~944                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~976                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1008               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1040               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~561                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~593                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~625                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~657                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~689                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~721                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~753                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~785                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~817                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~849                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~881                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~913                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~945                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~977                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1009               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1041               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~562                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~594                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~626                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~658                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~690                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~722                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~754                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~786                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~818                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~850                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~882                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~914                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~946                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~978                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1010               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1042               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~563                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~595                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~627                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~659                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~691                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~723                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~755                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~787                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~819                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~851                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~883                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~915                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~947                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~979                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1011               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1043               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~564                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~596                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~628                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~660                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~692                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~724                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~756                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~788                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~820                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~852                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~884                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~916                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~948                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~980                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1012               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1044               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~565                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~597                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~629                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~661                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~693                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~725                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~757                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~789                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~821                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~853                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~885                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~917                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~949                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~981                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1013               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1045               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~566                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~598                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~630                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~662                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~694                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~726                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~758                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~790                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~822                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~854                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~886                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~918                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~950                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~982                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1014               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1046               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~567                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~599                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~631                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~663                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~695                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~727                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~759                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~791                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~823                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~855                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~887                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~919                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~951                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~983                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1015               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1047               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~568                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~600                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~632                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~664                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~696                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~728                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~760                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~792                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~824                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~856                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~888                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~920                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~952                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~984                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1016               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1048               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~569                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~601                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~633                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~665                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~697                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~729                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~761                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~793                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~825                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~857                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~889                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~921                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~953                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~985                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1017               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1049               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~570                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~602                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~634                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~666                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~698                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~730                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~762                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~794                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~826                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~858                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~890                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~922                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~954                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~986                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1018               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1050               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~571                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~603                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~635                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~667                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~699                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~731                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~763                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~795                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~827                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~859                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~891                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~923                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~955                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~987                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1019               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1051               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~572                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~604                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~636                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~668                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~700                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~732                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~764                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~796                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~828                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~860                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~892                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~924                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~956                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~988                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1020               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1052               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~573                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~605                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~637                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~669                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~701                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~733                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~765                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~797                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~829                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~861                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~893                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~925                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~957                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~989                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1021               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1053               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~574                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~606                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~638                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~670                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~702                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~734                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~766                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~798                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~830                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~862                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~894                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~926                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~958                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~990                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1022               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1054               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~575                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~607                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~639                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~671                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~703                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~735                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~767                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~799                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~831                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~863                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~895                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~927                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~959                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~991                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1023               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1055               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~576                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~608                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~640                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~672                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~704                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~736                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~768                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~800                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~832                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~864                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~896                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~928                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~960                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~992                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1024               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1056               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~577                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~609                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~641                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~673                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~705                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~737                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~769                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~801                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~833                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~865                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~897                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~929                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~961                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~993                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1025               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1057               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~578                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~610                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~642                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~674                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~706                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~738                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~770                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~802                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~834                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~866                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~898                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~930                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~962                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~994                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1026               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1058               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~579                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~611                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~643                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~675                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~707                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~739                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~771                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~803                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~835                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~867                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~899                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~931                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~963                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~995                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1027               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1059               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~580                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~612                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~644                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~676                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~708                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~740                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~772                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~804                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~836                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~868                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~900                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~932                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~964                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~996                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1028               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1060               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~581                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~613                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~645                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~677                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~709                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~741                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~773                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~805                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~837                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~869                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~901                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~933                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~965                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~997                ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1029               ; Lost fanout                            ;
+; RegisterBank:regBank|regBank~1061               ; Lost fanout                            ;
+; Total Number of Removed Registers = 778         ;                                        ;
++-------------------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 2370  ;
+; Number of registers using Synchronous Clear  ; 7     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 6     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 2368  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; currentIndex[5]                         ; 2       ;
+; currentIndex[6]                         ; 2       ;
+; currentIndex[7]                         ; 2       ;
+; currentIndex[8]                         ; 2       ;
+; currentIndex[9]                         ; 2       ;
+; currentIndex[10]                        ; 2       ;
+; currentIndex[11]                        ; 2       ;
+; currentIndex[12]                        ; 2       ;
+; currentIndex[4]                         ; 29      ;
+; currentIndex[0]                         ; 29      ;
+; currentIndex[2]                         ; 27      ;
+; currentIndex[1]                         ; 29      ;
+; currentIndex[3]                         ; 29      ;
+; currentIndex[29]                        ; 2       ;
+; currentIndex[30]                        ; 2       ;
+; currentIndex[13]                        ; 2       ;
+; currentIndex[14]                        ; 2       ;
+; currentIndex[15]                        ; 2       ;
+; currentIndex[16]                        ; 2       ;
+; currentIndex[17]                        ; 2       ;
+; currentIndex[18]                        ; 2       ;
+; currentIndex[19]                        ; 2       ;
+; currentIndex[20]                        ; 2       ;
+; currentIndex[21]                        ; 2       ;
+; currentIndex[22]                        ; 2       ;
+; currentIndex[23]                        ; 2       ;
+; currentIndex[24]                        ; 2       ;
+; currentIndex[25]                        ; 2       ;
+; currentIndex[26]                        ; 2       ;
+; currentIndex[27]                        ; 2       ;
+; currentIndex[28]                        ; 2       ;
+; currentIndex[31]                        ; 2       ;
+; Total number of inverted registers = 32 ;         ;
++-----------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 8:1                ; 31 bits   ; 155 LEs       ; 93 LEs               ; 62 LEs                 ; No         ; |MIPS|ULA:ULAUnity|Mux0    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |MIPS ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; num            ; 32    ; Signed Integer                              ;
+; numAddress     ; 5     ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Register32Bits:ProgramCounter ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; num            ; 5     ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MemoryInstruction:InstructionMemory ;
++----------------+-------+---------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                    ;
++----------------+-------+---------------------------------------------------------+
+; wordlength     ; 32    ; Signed Integer                                          ;
+; words          ; 5     ; Signed Integer                                          ;
++----------------+-------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MUX5:muxWriteRegister ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; num            ; 5     ; Signed Integer                            ;
++----------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: RegisterBank:regBank ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; num            ; 32    ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MUX2:muxInULA ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; num            ; 32    ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MUX2:MUXSelectULA ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; num            ; 3     ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA:ULAUnity ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; num            ; 32    ; Signed Integer                   ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA:ULAUnity|SetLessThan:sltInstruction ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; num            ; 32    ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Memory:dataMemory ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; wordlength     ; 32    ; Signed Integer                        ;
+; words          ; 5     ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MUX2:muxOutMemory ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; num            ; 32    ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MUX5:muxBeq ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; num            ; 5     ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MUX5:muxPC ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; num            ; 5     ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Memory:dataMemory"                                                                       ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; adressout ; Input  ; Info     ; Stuck at GND                                                                        ;
+; dataout   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------+
+; Port Connectivity Checks: "MUX2:muxInULA"   ;
++-----------+-------+----------+--------------+
+; Port      ; Type  ; Severity ; Details      ;
++-----------+-------+----------+--------------+
+; b[31..16] ; Input ; Info     ; Stuck at GND ;
++-----------+-------+----------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "MemoryInstruction:InstructionMemory"                                                     ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; adressin  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; adressout ; Input  ; Info     ; Stuck at GND                                                                        ;
+; dataout   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 260                         ;
+; cycloneiii_ff         ; 2370                        ;
+;     CLR               ; 1                           ;
+;     ENA               ; 2356                        ;
+;     ENA CLR           ; 5                           ;
+;     ENA SCLR          ; 7                           ;
+;     plain             ; 1                           ;
+; cycloneiii_lcell_comb ; 2448                        ;
+;     arith             ; 92                          ;
+;         2 data inputs ; 29                          ;
+;         3 data inputs ; 63                          ;
+;     normal            ; 2356                        ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 39                          ;
+;         2 data inputs ; 64                          ;
+;         3 data inputs ; 242                         ;
+;         4 data inputs ; 2010                        ;
+;                       ;                             ;
+; Max LUT depth         ; 22.10                       ;
+; Average LUT depth     ; 14.55                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:12     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+    Info: Processing started: Thu Sep 17 07:15:01 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MIPS -c MIPS
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file MIPS.vhd
+    Info (12022): Found design unit 1: MIPS-datapath File: /home/rafael/Documentos/MIPS/RafaelRutz/MIPS.vhd Line: 44
+    Info (12023): Found entity 1: MIPS File: /home/rafael/Documentos/MIPS/RafaelRutz/MIPS.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file Register32Bits.vhd
+    Info (12022): Found design unit 1: Register32Bits-structure File: /home/rafael/Documentos/MIPS/RafaelRutz/Register32Bits.vhd Line: 19
+    Info (12023): Found entity 1: Register32Bits File: /home/rafael/Documentos/MIPS/RafaelRutz/Register32Bits.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file Register1Bit.vhd
+    Info (12022): Found design unit 1: Register1Bit-behavior File: /home/rafael/Documentos/MIPS/RafaelRutz/Register1Bit.vhd Line: 13
+    Info (12023): Found entity 1: Register1Bit File: /home/rafael/Documentos/MIPS/RafaelRutz/Register1Bit.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file MUX5.vhd
+    Info (12022): Found design unit 1: MUX5-behavior File: /home/rafael/Documentos/MIPS/RafaelRutz/MUX5.vhd Line: 21
+    Info (12023): Found entity 1: MUX5 File: /home/rafael/Documentos/MIPS/RafaelRutz/MUX5.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file MUX2.vhd
+    Info (12022): Found design unit 1: MUX2-behavior File: /home/rafael/Documentos/MIPS/RafaelRutz/MUX2.vhd Line: 21
+    Info (12023): Found entity 1: MUX2 File: /home/rafael/Documentos/MIPS/RafaelRutz/MUX2.vhd Line: 10
+Info (12021): Found 1 design units, including 0 entities, in source file MIPSPackage.vhd
+    Info (12022): Found design unit 1: MIPSPackage File: /home/rafael/Documentos/MIPS/RafaelRutz/MIPSPackage.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file MemoryInstruction.vhd
+    Info (12022): Found design unit 1: MemoryInstruction-behavior File: /home/rafael/Documentos/MIPS/RafaelRutz/MemoryInstruction.vhd Line: 29
+    Info (12023): Found entity 1: MemoryInstruction File: /home/rafael/Documentos/MIPS/RafaelRutz/MemoryInstruction.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file Memory.vhd
+    Info (12022): Found design unit 1: Memory-behavior File: /home/rafael/Documentos/MIPS/RafaelRutz/Memory.vhd Line: 30
+    Info (12023): Found entity 1: Memory File: /home/rafael/Documentos/MIPS/RafaelRutz/Memory.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file Control.vhd
+    Info (12022): Found design unit 1: Control-behavior File: /home/rafael/Documentos/MIPS/RafaelRutz/Control.vhd Line: 27
+    Info (12023): Found entity 1: Control File: /home/rafael/Documentos/MIPS/RafaelRutz/Control.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file ULAControl2.vhd
+    Info (12022): Found design unit 1: ULAControl2-behavior File: /home/rafael/Documentos/MIPS/RafaelRutz/ULAControl2.vhd Line: 19
+    Info (12023): Found entity 1: ULAControl2 File: /home/rafael/Documentos/MIPS/RafaelRutz/ULAControl2.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file ULAControl.vhd
+    Info (12022): Found design unit 1: ULAControl-behavior File: /home/rafael/Documentos/MIPS/RafaelRutz/ULAControl.vhd Line: 20
+    Info (12023): Found entity 1: ULAControl File: /home/rafael/Documentos/MIPS/RafaelRutz/ULAControl.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file ULA.vhd
+    Info (12022): Found design unit 1: ULA-behavior File: /home/rafael/Documentos/MIPS/RafaelRutz/ULA.vhd Line: 22
+    Info (12023): Found entity 1: ULA File: /home/rafael/Documentos/MIPS/RafaelRutz/ULA.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file SetLessThan.vhd
+    Info (12022): Found design unit 1: SetLessThan-behavior File: /home/rafael/Documentos/MIPS/RafaelRutz/SetLessThan.vhd Line: 18
+    Info (12023): Found entity 1: SetLessThan File: /home/rafael/Documentos/MIPS/RafaelRutz/SetLessThan.vhd Line: 9
+Info (12021): Found 2 design units, including 1 entities, in source file RegisterBank.vhd
+    Info (12022): Found design unit 1: RegisterBank-behavior File: /home/rafael/Documentos/MIPS/RafaelRutz/RegisterBank.vhd Line: 32
+    Info (12023): Found entity 1: RegisterBank File: /home/rafael/Documentos/MIPS/RafaelRutz/RegisterBank.vhd Line: 10
+Info (12127): Elaborating entity "MIPS" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at MIPS.vhd(69): object "immediateOperation" assigned a value but never read File: /home/rafael/Documentos/MIPS/RafaelRutz/MIPS.vhd Line: 69
+Info (12128): Elaborating entity "Register32Bits" for hierarchy "Register32Bits:ProgramCounter" File: /home/rafael/Documentos/MIPS/RafaelRutz/MIPS.vhd Line: 136
+Info (12128): Elaborating entity "Register1Bit" for hierarchy "Register32Bits:ProgramCounter|Register1Bit:\R32:0:regs" File: /home/rafael/Documentos/MIPS/RafaelRutz/Register32Bits.vhd Line: 26
+Info (12128): Elaborating entity "MemoryInstruction" for hierarchy "MemoryInstruction:InstructionMemory" File: /home/rafael/Documentos/MIPS/RafaelRutz/MIPS.vhd Line: 155
+Warning (10036): Verilog HDL or VHDL warning at MemoryInstruction.vhd(33): object "storeWord" assigned a value but never read File: /home/rafael/Documentos/MIPS/RafaelRutz/MemoryInstruction.vhd Line: 33
+Info (12128): Elaborating entity "Control" for hierarchy "Control:ControlUnity" File: /home/rafael/Documentos/MIPS/RafaelRutz/MIPS.vhd Line: 167
+Info (12128): Elaborating entity "MUX5" for hierarchy "MUX5:muxWriteRegister" File: /home/rafael/Documentos/MIPS/RafaelRutz/MIPS.vhd Line: 186
+Info (12128): Elaborating entity "RegisterBank" for hierarchy "RegisterBank:regBank" File: /home/rafael/Documentos/MIPS/RafaelRutz/MIPS.vhd Line: 192
+Info (12128): Elaborating entity "MUX2" for hierarchy "MUX2:muxInULA" File: /home/rafael/Documentos/MIPS/RafaelRutz/MIPS.vhd Line: 213
+Info (12128): Elaborating entity "ULAControl" for hierarchy "ULAControl:ULACtrl" File: /home/rafael/Documentos/MIPS/RafaelRutz/MIPS.vhd Line: 217
+Info (12128): Elaborating entity "ULAControl2" for hierarchy "ULAControl2:ULActrl2" File: /home/rafael/Documentos/MIPS/RafaelRutz/MIPS.vhd Line: 220
+Info (12128): Elaborating entity "MUX2" for hierarchy "MUX2:MUXSelectULA" File: /home/rafael/Documentos/MIPS/RafaelRutz/MIPS.vhd Line: 224
+Info (12128): Elaborating entity "ULA" for hierarchy "ULA:ULAUnity" File: /home/rafael/Documentos/MIPS/RafaelRutz/MIPS.vhd Line: 234
+Info (12128): Elaborating entity "SetLessThan" for hierarchy "ULA:ULAUnity|SetLessThan:sltInstruction" File: /home/rafael/Documentos/MIPS/RafaelRutz/ULA.vhd Line: 30
+Info (12128): Elaborating entity "Memory" for hierarchy "Memory:dataMemory" File: /home/rafael/Documentos/MIPS/RafaelRutz/MIPS.vhd Line: 239
+Warning (10036): Verilog HDL or VHDL warning at Memory.vhd(34): object "storeWord" assigned a value but never read File: /home/rafael/Documentos/MIPS/RafaelRutz/Memory.vhd Line: 34
+Info (276014): Found 3 instances of uninferred RAM logic
+    Info (276007): RAM logic "MemoryInstruction:InstructionMemory|memory" is uninferred due to asynchronous read logic File: /home/rafael/Documentos/MIPS/RafaelRutz/MemoryInstruction.vhd Line: 32
+    Info (276007): RAM logic "RegisterBank:regBank|regBank" is uninferred due to asynchronous read logic File: /home/rafael/Documentos/MIPS/RafaelRutz/RegisterBank.vhd Line: 39
+    Info (276007): RAM logic "Memory:dataMemory|memory" is uninferred due to asynchronous read logic File: /home/rafael/Documentos/MIPS/RafaelRutz/Memory.vhd Line: 33
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "instructionOut[6]" is stuck at GND File: /home/rafael/Documentos/MIPS/RafaelRutz/MIPS.vhd Line: 17
+    Warning (13410): Pin "instructionOut[7]" is stuck at GND File: /home/rafael/Documentos/MIPS/RafaelRutz/MIPS.vhd Line: 17
+    Warning (13410): Pin "instructionOut[8]" is stuck at GND File: /home/rafael/Documentos/MIPS/RafaelRutz/MIPS.vhd Line: 17
+    Warning (13410): Pin "instructionOut[9]" is stuck at GND File: /home/rafael/Documentos/MIPS/RafaelRutz/MIPS.vhd Line: 17
+    Warning (13410): Pin "instructionOut[10]" is stuck at GND File: /home/rafael/Documentos/MIPS/RafaelRutz/MIPS.vhd Line: 17
+    Warning (13410): Pin "instructionOut[15]" is stuck at GND File: /home/rafael/Documentos/MIPS/RafaelRutz/MIPS.vhd Line: 17
+    Warning (13410): Pin "instructionOut[20]" is stuck at GND File: /home/rafael/Documentos/MIPS/RafaelRutz/MIPS.vhd Line: 17
+    Warning (13410): Pin "instructionOut[25]" is stuck at GND File: /home/rafael/Documentos/MIPS/RafaelRutz/MIPS.vhd Line: 17
+    Warning (13410): Pin "addressWriteRegisterOut[4]" is stuck at GND File: /home/rafael/Documentos/MIPS/RafaelRutz/MIPS.vhd Line: 19
+    Warning (13410): Pin "addressRead1Out[4]" is stuck at GND File: /home/rafael/Documentos/MIPS/RafaelRutz/MIPS.vhd Line: 25
+    Warning (13410): Pin "addressRead2Out[4]" is stuck at GND File: /home/rafael/Documentos/MIPS/RafaelRutz/MIPS.vhd Line: 26
+    Warning (13410): Pin "wordInMemoryOut[6]" is stuck at GND File: /home/rafael/Documentos/MIPS/RafaelRutz/MIPS.vhd Line: 38
+    Warning (13410): Pin "wordInMemoryOut[7]" is stuck at GND File: /home/rafael/Documentos/MIPS/RafaelRutz/MIPS.vhd Line: 38
+    Warning (13410): Pin "wordInMemoryOut[8]" is stuck at GND File: /home/rafael/Documentos/MIPS/RafaelRutz/MIPS.vhd Line: 38
+    Warning (13410): Pin "wordInMemoryOut[9]" is stuck at GND File: /home/rafael/Documentos/MIPS/RafaelRutz/MIPS.vhd Line: 38
+    Warning (13410): Pin "wordInMemoryOut[10]" is stuck at GND File: /home/rafael/Documentos/MIPS/RafaelRutz/MIPS.vhd Line: 38
+    Warning (13410): Pin "wordInMemoryOut[15]" is stuck at GND File: /home/rafael/Documentos/MIPS/RafaelRutz/MIPS.vhd Line: 38
+    Warning (13410): Pin "wordInMemoryOut[20]" is stuck at GND File: /home/rafael/Documentos/MIPS/RafaelRutz/MIPS.vhd Line: 38
+    Warning (13410): Pin "wordInMemoryOut[25]" is stuck at GND File: /home/rafael/Documentos/MIPS/RafaelRutz/MIPS.vhd Line: 38
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 512 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 5009 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 258 output pins
+    Info (21061): Implemented 4749 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 24 warnings
+    Info: Peak virtual memory: 513 megabytes
+    Info: Processing ended: Thu Sep 17 07:15:32 2020
+    Info: Elapsed time: 00:00:31
+    Info: Total CPU time (on all processors): 00:00:45
+
+

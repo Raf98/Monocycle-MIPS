@@ -1,0 +1,150 @@
+/home/rafael/Documentos/MIPS/RafaelRutz/Memory.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/rafael/Documentos/MIPS/RafaelRutz/Memory.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package MIPSPackage
+-- Compiling entity Memory
+-- Compiling architecture behavior of Memory
+
+} {} {}} /home/rafael/Documentos/MIPS/RafaelRutz/RegisterBank.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/rafael/Documentos/MIPS/RafaelRutz/RegisterBank.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package MIPSPackage
+-- Compiling entity RegisterBank
+-- Compiling architecture behavior of RegisterBank
+
+} {} {}} /home/rafael/Documentos/MIPS/RafaelRutz/Register32Bits.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/rafael/Documentos/MIPS/RafaelRutz/Register32Bits.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package MIPSPackage
+-- Compiling entity Register32Bits
+-- Compiling architecture structure of Register32Bits
+
+} {} {}} /home/rafael/Documentos/MIPS/RafaelRutz/ULAControl2.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/rafael/Documentos/MIPS/RafaelRutz/ULAControl2.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package MIPSPackage
+-- Compiling entity ULAControl2
+-- Compiling architecture behavior of ULAControl2
+
+} {} {}} /home/rafael/Documentos/MIPS/RafaelRutz/MIPSPackage.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/rafael/Documentos/MIPS/RafaelRutz/MIPSPackage.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling package MIPSPackage
+
+} {} {}} /home/rafael/Documentos/MIPS/RafaelRutz/Register1Bit.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/rafael/Documentos/MIPS/RafaelRutz/Register1Bit.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity Register1Bit
+-- Compiling architecture behavior of Register1Bit
+
+} {} {}} /home/rafael/Documentos/MIPS/RafaelRutz/Control.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/rafael/Documentos/MIPS/RafaelRutz/Control.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package MIPSPackage
+-- Compiling entity Control
+-- Compiling architecture behavior of Control
+
+} {} {}} /home/rafael/Documentos/MIPS/RafaelRutz/MIPS.vhd {0 {vcom -work work -2002 -explicit -stats=none /home/rafael/Documentos/MIPS/RafaelRutz/MIPS.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_SIGNED
+-- Loading package MIPSPackage
+-- Compiling entity MIPS
+-- Compiling architecture datapath of MIPS
+** Error: /home/rafael/Documentos/MIPS/RafaelRutz/MIPS.vhd(253): (vcom-1436) Actual expression (infix expression) of formal "sel" is not globally static.
+** Note: /home/rafael/Documentos/MIPS/RafaelRutz/MIPS.vhd(309): VHDL Compiler exiting
+
+} {11.0 12.0} {}} /home/rafael/Documentos/MIPS/RafaelRutz/ULA.vhd {0 {vcom -work work -2002 -explicit -stats=none /home/rafael/Documentos/MIPS/RafaelRutz/ULA.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package MIPSPackage
+-- Compiling entity ULA
+-- Compiling architecture behavior of ULA
+** Error (suppressible): /home/rafael/Documentos/MIPS/RafaelRutz/ULA.vhd(50): (vcom-1014) Array type selected signal assignment expression must be of a locally static subtype.
+** Note: /home/rafael/Documentos/MIPS/RafaelRutz/ULA.vhd(55): VHDL Compiler exiting
+
+} {} {}} /home/rafael/Documentos/MIPS/RafaelRutz/ULAControl.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/rafael/Documentos/MIPS/RafaelRutz/ULAControl.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package MIPSPackage
+-- Compiling entity ULAControl
+-- Compiling architecture behavior of ULAControl
+
+} {} {}} /home/rafael/Documentos/MIPS/RafaelRutz/MemoryInstruction.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/rafael/Documentos/MIPS/RafaelRutz/MemoryInstruction.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package MIPSPackage
+-- Compiling entity MemoryInstruction
+-- Compiling architecture behavior of MemoryInstruction
+
+} {} {}} /home/rafael/Documentos/MIPS/RafaelRutz/MUX2.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/rafael/Documentos/MIPS/RafaelRutz/MUX2.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package MIPSPackage
+-- Compiling entity MUX2
+-- Compiling architecture behavior of MUX2
+
+} {} {}} /home/rafael/Documentos/MIPS/RafaelRutz/SetLessThan.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/rafael/Documentos/MIPS/RafaelRutz/SetLessThan.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package MIPSPackage
+-- Compiling entity SetLessThan
+-- Compiling architecture behavior of SetLessThan
+
+} {} {}} /home/rafael/Documentos/MIPS/RafaelRutz/MUX5.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/rafael/Documentos/MIPS/RafaelRutz/MUX5.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package MIPSPackage
+-- Compiling entity MUX5
+-- Compiling architecture behavior of MUX5
+
+} {} {}}

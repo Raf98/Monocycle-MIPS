@@ -1,0 +1,750 @@
+ -- Copyright (C) 2020  Intel Corporation. All rights reserved.
+ -- Your use of Intel Corporation's design tools, logic functions 
+ -- and other software and tools, and any partner logic 
+ -- functions, and any output files from any of the foregoing 
+ -- (including device programming or simulation files), and any 
+ -- associated documentation or information are expressly subject 
+ -- to the terms and conditions of the Intel Program License 
+ -- Subscription Agreement, the Intel Quartus Prime License Agreement,
+ -- the Intel FPGA IP License Agreement, or other applicable license
+ -- agreement, including, without limitation, that your use is for
+ -- the sole purpose of programming logic devices manufactured by
+ -- Intel and sold by Intel or its authorized distributors.  Please
+ -- refer to the applicable agreement for further details, at
+ -- https://fpgasoftware.intel.com/eula.
+ -- 
+ -- This is a Quartus Prime output file. It is for reporting purposes only, and is
+ -- not intended for use as a Quartus Prime input file. This file cannot be used
+ -- to make Quartus Prime pin assignments - for instructions on how to make pin
+ -- assignments, please see Quartus Prime help.
+ ---------------------------------------------------------------------------------
+
+
+
+ ---------------------------------------------------------------------------------
+ -- NC            : No Connect. This pin has no internal connection to the device.
+ -- DNU           : Do Not Use. This pin MUST NOT be connected.
+ -- VCCPGM        : Dedicated power pin for configuration, which MUST be connected to 1.8V, 2.5V or 3.0V depending on the requirements of the configuration device.
+ -- VCCINT        : Dedicated power pin, which MUST be connected to VCC  (1.2V).
+ -- VCCIO         : Dedicated power pin, which MUST be connected to VCC
+ --                 of its bank.
+ --                  Bank 3:       2.5V
+ --                  Bank 4:       2.5V
+ --                  Bank 5:       2.5V
+ --                  Bank 6:       2.5V
+ --                  Bank 7:       2.5V
+ --                  Bank 8:  2.5V
+ --                  Bank 9:  2.5V
+ -- RREF          : External reference resistor for the quad, MUST be connected to
+ --                 GND via a 2k Ohm resistor.
+ -- GND           : Dedicated ground pin. Dedicated GND pins MUST be connected to GND.
+ --                  It can also be used to report unused dedicated pins. The connection
+ --                  on the board for unused dedicated pins depends on whether this will
+ --                  be used in a future design. One example is device migration. When
+ --                  using device migration, refer to the device pin-tables. If it is a
+ --                  GND pin in the pin table or if it will not be used in a future design
+ --                  for another purpose the it MUST be connected to GND. If it is an unused
+ --                  dedicated pin, then it can be connected to a valid signal on the board
+ --                  (low, high, or toggling) if that signal is required for a different
+ --                  revision of the design.
+ -- GND+          : Unused input pin. It can also be used to report unused dual-purpose pins.
+ --                  This pin should be connected to GND. It may also be connected  to a
+ --                  valid signal  on the board  (low, high, or toggling)  if that signal
+ --                  is required for a different revision of the design.
+ -- GND*          : Unused  I/O  pin.   For transceiver I/O banks, connect each pin marked GND*
+ --                  either individually through a 10k Ohm resistor to GND or tie all pins
+ --                  together and connect through a single 10k Ohm resistor to GND.
+ -- RESERVED      : Unused I/O pin, which MUST be left unconnected.
+ -- RESERVED_INPUT    : Pin is tri-stated and should be connected to the board.
+ -- RESERVED_INPUT_WITH_WEAK_PULLUP    : Pin is tri-stated with internal weak pull-up resistor.
+ -- RESERVED_INPUT_WITH_BUS_HOLD       : Pin is tri-stated with bus-hold circuitry.
+ -- RESERVED_OUTPUT_DRIVEN_HIGH        : Pin is output driven high.
+ -- GXB_GND*      : Unused GXB Receiver or dedicated reference clock pin. This pin
+ --                 must be connected to GXB_GND through a 10k Ohm resistor.
+ -- GXB_NC        : Unused GXB Transmitter or dedicated clock output pin. This pin
+ --                 must not be connected.
+ ---------------------------------------------------------------------------------
+
+
+
+ ---------------------------------------------------------------------------------
+ -- Pin directions (input, output or bidir) are based on device operating in user mode.
+ ---------------------------------------------------------------------------------
+
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+CHIP  "MIPS"  ASSIGNED TO AN: EP4CGX50DF27C6
+
+Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
+-------------------------------------------------------------------------------------------------------------
+RESERVED_INPUT_WITH_WEAK_PULLUP : A2        :        :                   :         : 8         :                
+ULAOut[11]                   : A3        : output : 2.5 V             :         : 8         : N              
+ULAOut[20]                   : A4        : output : 2.5 V             :         : 8         : N              
+dataRead1Out[13]             : A5        : output : 2.5 V             :         : 8         : N              
+instructionOut[19]           : A6        : output : 2.5 V             :         : 8         : N              
+dataWriteRegisterOut[4]      : A7        : output : 2.5 V             :         : 8         : N              
+instructionOut[0]            : A8        : output : 2.5 V             :         : 8         : N              
+addressRead2Out[3]           : A9        : output : 2.5 V             :         : 8         : N              
+dataRead1Out[6]              : A10       : output : 2.5 V             :         : 8         : N              
+dataWriteRegisterOut[6]      : A11       : output : 2.5 V             :         : 8         : N              
+loadOut                      : A12       : output : 2.5 V             :         : 8         : N              
+instructionOut[21]           : A13       : output : 2.5 V             :         : 8         : N              
+GND+                         : A14       :        :                   :         : 7         :                
+loadMemoryOut                : A15       : output : 2.5 V             :         : 7         : N              
+addressWriteRegisterOut[3]   : A16       : output : 2.5 V             :         : 7         : N              
+addressRead1Out[0]           : A17       : output : 2.5 V             :         : 7         : N              
+wordInMemoryOut[27]          : A18       : output : 2.5 V             :         : 7         : N              
+addressWriteRegisterOut[2]   : A19       : output : 2.5 V             :         : 7         : N              
+mapControlOuput[10]          : A20       : output : 2.5 V             :         : 7         : N              
+pcNextOut[4]                 : A21       : output : 2.5 V             :         : 7         : N              
+wordInMemoryOut[14]          : A22       : output : 2.5 V             :         : 7         : N              
+ULAOut[23]                   : A23       : output : 2.5 V             :         : 7         : N              
+mapControlOuput[6]           : A24       : output : 2.5 V             :         : 7         : N              
+dataMemoryOut[31]            : A25       : output : 2.5 V             :         : 7         : N              
+GXB_GND*                     : AA1       :        :                   :         : QL0       :                
+GXB_GND*                     : AA2       :        :                   :         : QL0       :                
+VCCL_GXB                     : AA3       : power  :                   : 1.2V    :           :                
+VCCL_GXB                     : AA4       : power  :                   : 1.2V    :           :                
+nSTATUS                      : AA5       :        :                   :         : 3         :                
+MSEL0                        : AA6       :        :                   :         : 3         :                
+NC                           : AA7       :        :                   :         :           :                
+NC                           : AA8       :        :                   :         :           :                
+NC                           : AA9       :        :                   :         :           :                
+VCCIO3                       : AA10      : power  :                   : 2.5V    : 3         :                
+VCCIO3                       : AA11      : power  :                   : 2.5V    : 3         :                
+VCCIO3                       : AA12      : power  :                   : 2.5V    : 3         :                
+VCCIO3                       : AA13      : power  :                   : 2.5V    : 3         :                
+VCCIO3                       : AA14      : power  :                   : 2.5V    : 3         :                
+GND                          : AA15      : gnd    :                   :         :           :                
+VCCIO4                       : AA16      : power  :                   : 2.5V    : 4         :                
+GND                          : AA17      : gnd    :                   :         :           :                
+VCCIO4                       : AA18      : power  :                   : 2.5V    : 4         :                
+VCCIO4                       : AA19      : power  :                   : 2.5V    : 4         :                
+GND                          : AA20      : gnd    :                   :         :           :                
+dataRead2Out[19]             : AA21      : output : 2.5 V             :         : 4         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA22      :        :                   :         : 4         :                
+dataMemoryOut[25]            : AA23      : output : 2.5 V             :         : 5         : N              
+dataRead1Out[27]             : AA24      : output : 2.5 V             :         : 5         : N              
+dataRead2Out[13]             : AA25      : output : 2.5 V             :         : 5         : N              
+dataRead2Out[6]              : AA26      : output : 2.5 V             :         : 5         : N              
+GND                          : AB1       : gnd    :                   :         :           :                
+GND                          : AB2       : gnd    :                   :         :           :                
+NC                           : AB3       :        :                   :         :           :                
+NC                           : AB4       :        :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB5       :        :                   :         : 3         :                
+CONF_DONE                    : AB6       :        :                   :         : 3         :                
+instructionOut[10]           : AB7       : output : 2.5 V             :         : 3         : N              
+NC                           : AB8       :        :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB9       :        :                   :         : 3         :                
+GND                          : AB10      : gnd    :                   :         :           :                
+instructionOut[9]            : AB11      : output : 2.5 V             :         : 3         : N              
+dataRead1Out[20]             : AB12      : output : 2.5 V             :         : 3         : N              
+GND                          : AB13      : gnd    :                   :         :           :                
+ULAOut[13]                   : AB14      : output : 2.5 V             :         : 4         : N              
+NC                           : AB15      :        :                   :         :           :                
+GND                          : AB16      : gnd    :                   :         :           :                
+VCCIO4                       : AB17      : power  :                   : 2.5V    : 4         :                
+dataMemoryOut[10]            : AB18      : output : 2.5 V             :         : 4         : N              
+GND                          : AB19      : gnd    :                   :         :           :                
+NC                           : AB20      :        :                   :         :           :                
+ULAOut[17]                   : AB21      : output : 2.5 V             :         : 4         : N              
+GND                          : AB22      : gnd    :                   :         :           :                
+dataRead1Out[15]             : AB23      : output : 2.5 V             :         : 5         : N              
+dataRead1Out[1]              : AB24      : output : 2.5 V             :         : 5         : N              
+GND                          : AB25      : gnd    :                   :         :           :                
+dataRead2Out[11]             : AB26      : output : 2.5 V             :         : 5         : N              
+RREF                         : AC1       :        :                   :         :           :                
+GND                          : AC2       : gnd    :                   :         :           :                
+VCCA_GXB                     : AC3       : power  :                   : 2.5V    :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AC4       :        :                   :         : 3         :                
+instructionOut[6]            : AC5       : output : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AC6       :        :                   :         : 3         :                
+~ALTERA_NCEO~ / RESERVED_OUTPUT_OPEN_DRAIN : AC7       : output : 2.5 V             :         : 3         : N              
+GND                          : AC8       : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AC9       :        :                   :         : 3         :                
+dataRead1Out[9]              : AC10      : output : 2.5 V             :         : 3         : N              
+dataMemoryOut[16]            : AC11      : output : 2.5 V             :         : 3         : N              
+dataMemoryOut[8]             : AC12      : output : 2.5 V             :         : 3         : N              
+dataWriteRegisterOut[10]     : AC13      : output : 2.5 V             :         : 3         : N              
+dataRead1Out[16]             : AC14      : output : 2.5 V             :         : 4         : N              
+NC                           : AC15      :        :                   :         :           :                
+ULAOut[24]                   : AC16      : output : 2.5 V             :         : 4         : N              
+dataMemoryOut[18]            : AC17      : output : 2.5 V             :         : 4         : N              
+dataMemoryOut[12]            : AC18      : output : 2.5 V             :         : 4         : N              
+ULAOut[9]                    : AC19      : output : 2.5 V             :         : 4         : N              
+dataRead2Out[9]              : AC20      : output : 2.5 V             :         : 4         : N              
+dataRead2Out[24]             : AC21      : output : 2.5 V             :         : 4         : N              
+dataMemoryOut[22]            : AC22      : output : 2.5 V             :         : 4         : N              
+dataMemoryOut[17]            : AC23      : output : 2.5 V             :         : 5         : N              
+mapControlOuput[7]           : AC24      : output : 2.5 V             :         : 5         : N              
+ULAOut[15]                   : AC25      : output : 2.5 V             :         : 5         : N              
+dataWriteRegisterOut[15]     : AC26      : output : 2.5 V             :         : 5         : N              
+GND                          : AD1       : gnd    :                   :         :           :                
+VCCL_GXB                     : AD2       : power  :                   : 1.2V    :           :                
+instructionOut[15]           : AD3       : output : 2.5 V             :         : 3         : N              
+wordInMemoryOut[7]           : AD4       : output : 2.5 V             :         : 3         : N              
+instructionOut[23]           : AD5       : output : 2.5 V             :         : 3         : N              
+addressRead1Out[4]           : AD6       : output : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AD7       :        :                   :         : 3         :                
+addressWriteRegisterOut[4]   : AD8       : output : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AD9       :        :                   :         : 3         :                
+dataRead1Out[14]             : AD10      : output : 2.5 V             :         : 3         : N              
+dataMemoryOut[14]            : AD11      : output : 2.5 V             :         : 3         : N              
+dataWriteRegisterOut[5]      : AD12      : output : 2.5 V             :         : 3         : N              
+addressRead1Out[1]           : AD13      : output : 2.5 V             :         : 3         : N              
+dataWriteRegisterOut[28]     : AD14      : output : 2.5 V             :         : 4         : N              
+NC                           : AD15      :        :                   :         :           :                
+instructionOut[12]           : AD16      : output : 2.5 V             :         : 4         : N              
+ULAOut[8]                    : AD17      : output : 2.5 V             :         : 4         : N              
+dataMemoryOut[28]            : AD18      : output : 2.5 V             :         : 4         : N              
+dataRead1Out[18]             : AD19      : output : 2.5 V             :         : 4         : N              
+dataMemoryOut[1]             : AD20      : output : 2.5 V             :         : 4         : N              
+dataRead2Out[12]             : AD21      : output : 2.5 V             :         : 4         : N              
+dataMemoryOut[6]             : AD22      : output : 2.5 V             :         : 4         : N              
+dataRead2Out[18]             : AD23      : output : 2.5 V             :         : 4         : N              
+dataMemoryOut[29]            : AD24      : output : 2.5 V             :         : 4         : N              
+dataRead1Out[2]              : AD25      : output : 2.5 V             :         : 5         : N              
+dataRead1Out[26]             : AD26      : output : 2.5 V             :         : 5         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AE1       :        :                   :         : 3         :                
+addressRead2Out[4]           : AE2       : output : 2.5 V             :         : 3         : N              
+wordInMemoryOut[10]          : AE3       : output : 2.5 V             :         : 3         : N              
+GND                          : AE4       : gnd    :                   :         :           :                
+instructionOut[8]            : AE5       : output : 2.5 V             :         : 3         : N              
+addressRead1Out[2]           : AE6       : output : 2.5 V             :         : 3         : N              
+dataMemoryOut[11]            : AE7       : output : 2.5 V             :         : 3         : N              
+GND                          : AE8       : gnd    :                   :         :           :                
+addressRead2Out[2]           : AE9       : output : 2.5 V             :         : 3         : N              
+instructionOut[22]           : AE10      : output : 2.5 V             :         : 3         : N              
+instructionOut[18]           : AE11      : output : 2.5 V             :         : 3         : N              
+GND                          : AE12      : gnd    :                   :         :           :                
+dataWriteRegisterOut[0]      : AE13      : output : 2.5 V             :         : 3         : N              
+dataWriteRegisterOut[9]      : AE14      : output : 2.5 V             :         : 4         : N              
+dataWriteRegisterOut[20]     : AE15      : output : 2.5 V             :         : 4         : N              
+GND                          : AE16      : gnd    :                   :         :           :                
+dataMemoryOut[4]             : AE17      : output : 2.5 V             :         : 4         : N              
+ULAOut[28]                   : AE18      : output : 2.5 V             :         : 4         : N              
+dataMemoryOut[5]             : AE19      : output : 2.5 V             :         : 4         : N              
+GND                          : AE20      : gnd    :                   :         :           :                
+dataRead1Out[24]             : AE21      : output : 2.5 V             :         : 4         : N              
+dataMemoryOut[0]             : AE22      : output : 2.5 V             :         : 4         : N              
+dataRead2Out[8]              : AE23      : output : 2.5 V             :         : 4         : N              
+GND                          : AE24      : gnd    :                   :         :           :                
+dataRead2Out[26]             : AE25      : output : 2.5 V             :         : 5         : N              
+dataWriteRegisterOut[30]     : AE26      : output : 2.5 V             :         : 5         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF2       :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF3       :        :                   :         : 3         :                
+instructionOut[2]            : AF4       : output : 2.5 V             :         : 3         : N              
+ULAOut[18]                   : AF5       : output : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF6       :        :                   :         : 3         :                
+dataMemoryOut[13]            : AF7       : output : 2.5 V             :         : 3         : N              
+wordInMemoryOut[1]           : AF8       : output : 2.5 V             :         : 3         : N              
+dataWriteRegisterOut[8]      : AF9       : output : 2.5 V             :         : 3         : N              
+ULAOut[25]                   : AF10      : output : 2.5 V             :         : 3         : N              
+instructionOut[30]           : AF11      : output : 2.5 V             :         : 3         : N              
+dataWriteRegisterOut[24]     : AF12      : output : 2.5 V             :         : 3         : N              
+GND+                         : AF13      :        :                   :         : 4         :                
+GND+                         : AF14      :        :                   :         : 4         :                
+ULAOut[12]                   : AF15      : output : 2.5 V             :         : 4         : N              
+dataMemoryOut[24]            : AF16      : output : 2.5 V             :         : 4         : N              
+instructionOut[14]           : AF17      : output : 2.5 V             :         : 4         : N              
+dataMemoryOut[9]             : AF18      : output : 2.5 V             :         : 4         : N              
+ULAOut[10]                   : AF19      : output : 2.5 V             :         : 4         : N              
+dataRead1Out[28]             : AF20      : output : 2.5 V             :         : 4         : N              
+dataRead1Out[0]              : AF21      : output : 2.5 V             :         : 4         : N              
+dataMemoryOut[15]            : AF22      : output : 2.5 V             :         : 4         : N              
+ULAOut[26]                   : AF23      : output : 2.5 V             :         : 4         : N              
+dataMemoryOut[27]            : AF24      : output : 2.5 V             :         : 4         : N              
+ULAOut[22]                   : AF25      : output : 2.5 V             :         : 4         : N              
+instructionOut[5]            : B1        : output : 2.5 V             :         : 8         : N              
+wordInMemoryOut[6]           : B2        : output : 2.5 V             :         : 8         : N              
+GND                          : B3        : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : B4        :        :                   :         : 8         :                
+instructionOut[29]           : B5        : output : 2.5 V             :         : 8         : N              
+mapControlOuput[9]           : B6        : output : 2.5 V             :         : 8         : N              
+wordInMemoryOut[25]          : B7        : output : 2.5 V             :         : 8         : N              
+GND                          : B8        : gnd    :                   :         :           :                
+instructionOut[11]           : B9        : output : 2.5 V             :         : 8         : N              
+dataWriteRegisterOut[18]     : B10       : output : 2.5 V             :         : 8         : N              
+dataRead1Out[12]             : B11       : output : 2.5 V             :         : 8         : N              
+GND                          : B12       : gnd    :                   :         :           :                
+instructionOut[1]            : B13       : output : 2.5 V             :         : 8         : N              
+GND+                         : B14       :        :                   :         : 7         :                
+wordInMemoryOut[0]           : B15       : output : 2.5 V             :         : 7         : N              
+GND                          : B16       : gnd    :                   :         :           :                
+addressWriteRegisterOut[1]   : B17       : output : 2.5 V             :         : 7         : N              
+wordInMemoryOut[23]          : B18       : output : 2.5 V             :         : 7         : N              
+pcNextOut[2]                 : B19       : output : 2.5 V             :         : 7         : N              
+GND                          : B20       : gnd    :                   :         :           :                
+pcNextOut[1]                 : B21       : output : 2.5 V             :         : 7         : N              
+wordInMemoryOut[28]          : B22       : output : 2.5 V             :         : 7         : N              
+dataMemoryOut[19]            : B23       : output : 2.5 V             :         : 7         : N              
+GND                          : B24       : gnd    :                   :         :           :                
+instructionOut[16]           : B25       : output : 2.5 V             :         : 6         : N              
+dataWriteRegisterOut[21]     : B26       : output : 2.5 V             :         : 6         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : C1        :        :                   :         : 8         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : C2        :        :                   :         : 8         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : C3        :        :                   :         : 8         :                
+instructionOut[25]           : C4        : output : 2.5 V             :         : 8         : N              
+dataRead1Out[7]              : C5        : output : 2.5 V             :         : 8         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : C6        :        :                   :         : 8         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : C7        :        :                   :         : 8         :                
+wordInMemoryOut[20]          : C8        : output : 2.5 V             :         : 8         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : C9        :        :                   :         : 8         :                
+instructionOut[7]            : C10       : output : 2.5 V             :         : 8         : N              
+dataMemoryOut[30]            : C11       : output : 2.5 V             :         : 8         : N              
+dataWriteRegisterOut[16]     : C12       : output : 2.5 V             :         : 8         : N              
+instructionOut[26]           : C13       : output : 2.5 V             :         : 8         : N              
+dataWriteRegisterOut[13]     : C14       : output : 2.5 V             :         : 7         : N              
+dataWriteRegisterOut[14]     : C15       : output : 2.5 V             :         : 7         : N              
+ULAOut[14]                   : C16       : output : 2.5 V             :         : 7         : N              
+wordInMemoryOut[16]          : C17       : output : 2.5 V             :         : 7         : N              
+addressWriteRegisterOut[0]   : C18       : output : 2.5 V             :         : 7         : N              
+pcNextOut[3]                 : C19       : output : 2.5 V             :         : 7         : N              
+wordInMemoryOut[12]          : C20       : output : 2.5 V             :         : 7         : N              
+dataRead1Out[31]             : C21       : output : 2.5 V             :         : 7         : N              
+dataWriteRegisterOut[19]     : C22       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : C23       :        :                   :         : 7         :                
+pcNextOut[0]                 : C24       : output : 2.5 V             :         : 6         : N              
+addressRead2Out[0]           : C25       : output : 2.5 V             :         : 6         : N              
+ULAOut[6]                    : C26       : output : 2.5 V             :         : 6         : N              
+wordInMemoryOut[8]           : D1        : output : 2.5 V             :         : 8         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : D2        :        :                   :         : 8         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : D3        :        :                   :         : 8         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : D4        :        :                   :         : 8         :                
+~ALTERA_NCSO~ / RESERVED_INPUT_WITH_WEAK_PULLUP : D5        : input  : 2.5 V             :         : 9         : N              
+~ALTERA_DATA0~ / RESERVED_INPUT_WITH_WEAK_PULLUP : D6        : input  : 2.5 V             :         : 9         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : D7        :        :                   :         : 8         :                
+GND                          : D8        : gnd    :                   :         :           :                
+wordInMemoryOut[15]          : D9        : output : 2.5 V             :         : 8         : N              
+wordInMemoryOut[9]           : D10       : output : 2.5 V             :         : 8         : N              
+mapControlOuput[11]          : D11       : output : 2.5 V             :         : 8         : N              
+NC                           : D12       :        :                   :         :           :                
+NC                           : D13       :        :                   :         :           :                
+dataWriteRegisterOut[26]     : D14       : output : 2.5 V             :         : 8         : N              
+dataWriteRegisterOut[27]     : D15       : output : 2.5 V             :         : 7         : N              
+wordInMemoryOut[18]          : D16       : output : 2.5 V             :         : 7         : N              
+wordInMemoryOut[22]          : D17       : output : 2.5 V             :         : 7         : N              
+wordInMemoryOut[17]          : D18       : output : 2.5 V             :         : 7         : N              
+instructionOut[27]           : D19       : output : 2.5 V             :         : 7         : N              
+ULAOut[21]                   : D20       : output : 2.5 V             :         : 7         : N              
+wordInMemoryOut[19]          : D21       : output : 2.5 V             :         : 7         : N              
+ULAOut[5]                    : D22       : output : 2.5 V             :         : 7         : N              
+dataWriteRegisterOut[7]      : D23       : output : 2.5 V             :         : 7         : N              
+mapControlOuput[1]           : D24       : output : 2.5 V             :         : 6         : N              
+addressRead1Out[3]           : D25       : output : 2.5 V             :         : 6         : N              
+dataMemoryOut[23]            : D26       : output : 2.5 V             :         : 6         : N              
+instructionOut[20]           : E1        : output : 2.5 V             :         : 8         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : E2        :        :                   :         : 8         :                
+GND                          : E3        : gnd    :                   :         :           :                
+GND                          : E4        : gnd    :                   :         :           :                
+nCONFIG                      : E5        :        :                   :         : 9         :                
+~ALTERA_ASDO_DATA1~ / RESERVED_INPUT_WITH_WEAK_PULLUP : E6        : input  : 2.5 V             :         : 9         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : E7        :        :                   :         : 8         :                
+GND                          : E8        : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : E9        :        :                   :         : 8         :                
+VCCIO8                       : E10       : power  :                   : 2.5V    : 8         :                
+NC                           : E11       :        :                   :         :           :                
+NC                           : E12       :        :                   :         :           :                
+GND                          : E13       : gnd    :                   :         :           :                
+GND                          : E14       : gnd    :                   :         :           :                
+wordInMemoryOut[5]           : E15       : output : 2.5 V             :         : 7         : N              
+wordInMemoryOut[2]           : E16       : output : 2.5 V             :         : 7         : N              
+wordInMemoryOut[26]          : E17       : output : 2.5 V             :         : 7         : N              
+GND                          : E18       : gnd    :                   :         :           :                
+NC                           : E19       :        :                   :         :           :                
+ULAOut[31]                   : E20       : output : 2.5 V             :         : 7         : N              
+dataMemoryOut[3]             : E21       : output : 2.5 V             :         : 7         : N              
+dataRead1Out[4]              : E22       : output : 2.5 V             :         : 7         : N              
+dataRead1Out[23]             : E23       : output : 2.5 V             :         : 7         : N              
+ULAOut[30]                   : E24       : output : 2.5 V             :         : 6         : N              
+instructionOut[24]           : E25       : output : 2.5 V             :         : 6         : N              
+instructionOut[3]            : E26       : output : 2.5 V             :         : 6         : N              
+GND                          : F1        : gnd    :                   :         :           :                
+GND                          : F2        : gnd    :                   :         :           :                
+GXB_NC                       : F3        :        :                   :         : QL1       :                
+GXB_NC                       : F4        :        :                   :         : QL1       :                
+TMS                          : F5        : input  :                   :         : 9         :                
+~ALTERA_DCLK~                : F6        : output : 2.5 V             :         : 9         : N              
+GND                          : F7        : gnd    :                   :         :           :                
+VCCINT                       : F8        : power  :                   : 1.2V    :           :                
+VCCIO8                       : F9        : power  :                   : 2.5V    : 8         :                
+GND                          : F10       : gnd    :                   :         :           :                
+VCCIO8                       : F11       : power  :                   : 2.5V    : 8         :                
+GND                          : F12       : gnd    :                   :         :           :                
+VCCIO8                       : F13       : power  :                   : 2.5V    : 8         :                
+VCCIO8                       : F14       : power  :                   : 2.5V    : 8         :                
+NC                           : F15       :        :                   :         :           :                
+VCCIO7                       : F16       : power  :                   : 2.5V    : 7         :                
+GND                          : F17       : gnd    :                   :         :           :                
+VCCIO7                       : F18       : power  :                   : 2.5V    : 7         :                
+GND                          : F19       : gnd    :                   :         :           :                
+VCCIO7                       : F20       : power  :                   : 2.5V    : 7         :                
+ULAOut[19]                   : F21       : output : 2.5 V             :         : 6         : N              
+GND                          : F22       : gnd    :                   :         :           :                
+mapControlOuput[3]           : F23       : output : 2.5 V             :         : 6         : N              
+dataRead1Out[22]             : F24       : output : 2.5 V             :         : 6         : N              
+GND                          : F25       : gnd    :                   :         :           :                
+dataRead1Out[11]             : F26       : output : 2.5 V             :         : 6         : N              
+GXB_GND*                     : G1        :        :                   :         : QL1       :                
+GXB_GND*                     : G2        :        :                   :         : QL1       :                
+GND                          : G3        : gnd    :                   :         :           :                
+GND                          : G4        : gnd    :                   :         :           :                
+VCCL_GXB                     : G5        : power  :                   : 1.2V    :           :                
+TDI                          : G6        : input  :                   :         : 9         :                
+VCCIO9                       : G7        : power  :                   : 2.5V    : 9         :                
+TCK                          : G8        : input  :                   :         : 9         :                
+VCCINT                       : G9        : power  :                   : 1.2V    :           :                
+VCCINT                       : G10       : power  :                   : 1.2V    :           :                
+VCCINT                       : G11       : power  :                   : 1.2V    :           :                
+VCCIO8                       : G12       : power  :                   : 2.5V    : 8         :                
+GND                          : G13       : gnd    :                   :         :           :                
+GND                          : G14       : gnd    :                   :         :           :                
+VCCINT                       : G15       : power  :                   : 1.2V    :           :                
+VCCIO7                       : G16       : power  :                   : 2.5V    : 7         :                
+VCCINT                       : G17       : power  :                   : 1.2V    :           :                
+VCCIO7                       : G18       : power  :                   : 2.5V    : 7         :                
+VCCIO7                       : G19       : power  :                   : 2.5V    : 7         :                
+GND                          : G20       : gnd    :                   :         :           :                
+VCCD_PLL                     : G21       : power  :                   : 1.2V    :           :                
+ULAOut[16]                   : G22       : output : 2.5 V             :         : 6         : N              
+instructionOut[4]            : G23       : output : 2.5 V             :         : 6         : N              
+mapControlOuput[0]           : G24       : output : 2.5 V             :         : 6         : N              
+ULAOut[27]                   : G25       : output : 2.5 V             :         : 6         : N              
+dataRead1Out[17]             : G26       : output : 2.5 V             :         : 6         : N              
+GND                          : H1        : gnd    :                   :         :           :                
+GND                          : H2        : gnd    :                   :         :           :                
+GXB_NC                       : H3        :        :                   :         : QL1       :                
+GXB_NC                       : H4        :        :                   :         : QL1       :                
+VCCL_GXB                     : H5        : power  :                   : 1.2V    :           :                
+VCCA                         : H6        : power  :                   : 2.5V    :           :                
+nCE                          : H7        :        :                   :         : 9         :                
+TDO                          : H8        : output :                   :         : 9         :                
+GND                          : H9        : gnd    :                   :         :           :                
+GND                          : H10       : gnd    :                   :         :           :                
+GND                          : H11       : gnd    :                   :         :           :                
+VCCINT                       : H12       : power  :                   : 1.2V    :           :                
+GND                          : H13       : gnd    :                   :         :           :                
+VCCINT                       : H14       : power  :                   : 1.2V    :           :                
+GND                          : H15       : gnd    :                   :         :           :                
+VCCINT                       : H16       : power  :                   : 1.2V    :           :                
+GND                          : H17       : gnd    :                   :         :           :                
+VCCINT                       : H18       : power  :                   : 1.2V    :           :                
+GND                          : H19       : gnd    :                   :         :           :                
+VCCA                         : H20       : power  :                   : 2.5V    :           :                
+VCCIO6                       : H21       : power  :                   : 2.5V    : 6         :                
+dataRead1Out[19]             : H22       : output : 2.5 V             :         : 6         : N              
+dataRead1Out[10]             : H23       : output : 2.5 V             :         : 6         : N              
+dataRead1Out[25]             : H24       : output : 2.5 V             :         : 6         : N              
+instructionOut[17]           : H25       : output : 2.5 V             :         : 6         : N              
+addressRead2Out[1]           : H26       : output : 2.5 V             :         : 6         : N              
+GXB_GND*                     : J1        :        :                   :         : QL1       :                
+GXB_GND*                     : J2        :        :                   :         : QL1       :                
+GND                          : J3        : gnd    :                   :         :           :                
+GND                          : J4        : gnd    :                   :         :           :                
+VCCH_GXB                     : J5        : power  :                   : 2.5V    :           :                
+VCCD_PLL                     : J6        : power  :                   : 1.2V    :           :                
+GND                          : J7        : gnd    :                   :         :           :                
+GND                          : J8        : gnd    :                   :         :           :                
+VCC_CLKIN8B                  : J9        : power  :                   : 2.5V    : 8B        :                
+VCCINT                       : J10       : power  :                   : 1.2V    :           :                
+VCCINT                       : J11       : power  :                   : 1.2V    :           :                
+GND                          : J12       : gnd    :                   :         :           :                
+VCCINT                       : J13       : power  :                   : 1.2V    :           :                
+GND                          : J14       : gnd    :                   :         :           :                
+VCCINT                       : J15       : power  :                   : 1.2V    :           :                
+GND                          : J16       : gnd    :                   :         :           :                
+VCCINT                       : J17       : power  :                   : 1.2V    :           :                
+GND                          : J18       : gnd    :                   :         :           :                
+VCCINT                       : J19       : power  :                   : 1.2V    :           :                
+GND                          : J20       : gnd    :                   :         :           :                
+VCCIO6                       : J21       : power  :                   : 2.5V    : 6         :                
+GND                          : J22       : gnd    :                   :         :           :                
+instructionOut[28]           : J23       : output : 2.5 V             :         : 6         : N              
+dataRead1Out[21]             : J24       : output : 2.5 V             :         : 6         : N              
+dataWriteRegisterOut[3]      : J25       : output : 2.5 V             :         : 6         : N              
+dataRead1Out[29]             : J26       : output : 2.5 V             :         : 6         : N              
+GND                          : K1        : gnd    :                   :         :           :                
+GND                          : K2        : gnd    :                   :         :           :                
+GXB_NC                       : K3        :        :                   :         : QL1       :                
+GXB_NC                       : K4        :        :                   :         : QL1       :                
+VCCA_GXB                     : K5        : power  :                   : 2.5V    :           :                
+GND                          : K6        : gnd    :                   :         :           :                
+VCCA                         : K7        : power  :                   : 2.5V    :           :                
+VCCINT                       : K8        : power  :                   : 1.2V    :           :                
+GXB_GND*                     : K9        :        :                   :         : 8B        :                
+GXB_GND*                     : K10       :        :                   :         : 8B        :                
+GND                          : K11       : gnd    :                   :         :           :                
+VCCINT                       : K12       : power  :                   : 1.2V    :           :                
+GND                          : K13       : gnd    :                   :         :           :                
+VCC_CLKIN8A                  : K14       : power  :                   : 2.5V    : 8A        :                
+GND                          : K15       : gnd    :                   :         :           :                
+VCCINT                       : K16       : power  :                   : 1.2V    :           :                
+GND                          : K17       : gnd    :                   :         :           :                
+VCCINT                       : K18       : power  :                   : 1.2V    :           :                
+GND                          : K19       : gnd    :                   :         :           :                
+instructionOut[13]           : K20       : output : 2.5 V             :         : 6         : N              
+instructionOut[31]           : K21       : output : 2.5 V             :         : 6         : N              
+dataRead1Out[5]              : K22       : output : 2.5 V             :         : 6         : N              
+ULAOut[7]                    : K23       : output : 2.5 V             :         : 6         : N              
+dataRead1Out[30]             : K24       : output : 2.5 V             :         : 6         : N              
+GND                          : K25       : gnd    :                   :         :           :                
+dataWriteRegisterOut[2]      : K26       : output : 2.5 V             :         : 6         : N              
+GXB_GND*                     : L1        :        :                   :         : QL1       :                
+GXB_GND*                     : L2        :        :                   :         : QL1       :                
+GND                          : L3        : gnd    :                   :         :           :                
+GND                          : L4        : gnd    :                   :         :           :                
+VCCL_GXB                     : L5        : power  :                   : 1.2V    :           :                
+VCCD_PLL                     : L6        : power  :                   : 1.2V    :           :                
+VCCINT                       : L7        : power  :                   : 1.2V    :           :                
+GND                          : L8        : gnd    :                   :         :           :                
+GXB_GND*                     : L9        :        :                   :         : 8B        :                
+GXB_GND*                     : L10       :        :                   :         : 8B        :                
+VCCINT                       : L11       : power  :                   : 1.2V    :           :                
+GND                          : L12       : gnd    :                   :         :           :                
+VCCINT                       : L13       : power  :                   : 1.2V    :           :                
+GXB_GND*                     : L14       :        :                   :         : 8A        :                
+GXB_GND*                     : L15       :        :                   :         : 8A        :                
+GND                          : L16       : gnd    :                   :         :           :                
+VCCINT                       : L17       : power  :                   : 1.2V    :           :                
+GND                          : L18       : gnd    :                   :         :           :                
+wordInMemoryOut[4]           : L19       : output : 2.5 V             :         : 6         : N              
+VCCIO6                       : L20       : power  :                   : 2.5V    : 6         :                
+dataWriteRegisterOut[11]     : L21       : output : 2.5 V             :         : 6         : N              
+wordInMemoryOut[29]          : L22       : output : 2.5 V             :         : 6         : N              
+dataRead1Out[8]              : L23       : output : 2.5 V             :         : 6         : N              
+dataWriteRegisterOut[17]     : L24       : output : 2.5 V             :         : 6         : N              
+wordInMemoryOut[3]           : L25       : output : 2.5 V             :         : 6         : N              
+dataWriteRegisterOut[22]     : L26       : output : 2.5 V             :         : 6         : N              
+GND                          : M1        : gnd    :                   :         :           :                
+GND                          : M2        : gnd    :                   :         :           :                
+GXB_NC                       : M3        :        :                   :         : QL1       :                
+GXB_NC                       : M4        :        :                   :         : QL1       :                
+VCCH_GXB                     : M5        : power  :                   : 2.5V    :           :                
+VCCD_PLL                     : M6        : power  :                   : 1.2V    :           :                
+GND                          : M7        : gnd    :                   :         :           :                
+VCCINT                       : M8        : power  :                   : 1.2V    :           :                
+GND                          : M9        : gnd    :                   :         :           :                
+VCCINT                       : M10       : power  :                   : 1.2V    :           :                
+GND                          : M11       : gnd    :                   :         :           :                
+VCCINT                       : M12       : power  :                   : 1.2V    :           :                
+GND                          : M13       : gnd    :                   :         :           :                
+VCCINT                       : M14       : power  :                   : 1.2V    :           :                
+GND                          : M15       : gnd    :                   :         :           :                
+VCCINT                       : M16       : power  :                   : 1.2V    :           :                
+GND                          : M17       : gnd    :                   :         :           :                
+VCCINT                       : M18       : power  :                   : 1.2V    :           :                
+wordInMemoryOut[31]          : M19       : output : 2.5 V             :         : 6         : N              
+VCCIO6                       : M20       : power  :                   : 2.5V    : 6         :                
+GND                          : M21       : gnd    :                   :         :           :                
+wordInMemoryOut[13]          : M22       : output : 2.5 V             :         : 6         : N              
+dataWriteRegisterOut[1]      : M23       : output : 2.5 V             :         : 6         : N              
+wordInMemoryOut[30]          : M24       : output : 2.5 V             :         : 6         : N              
+dataWriteRegisterOut[25]     : M25       : output : 2.5 V             :         : 6         : N              
+wordInMemoryOut[21]          : M26       : output : 2.5 V             :         : 6         : N              
+GXB_GND*                     : N1        :        :                   :         : QL1       :                
+GXB_GND*                     : N2        :        :                   :         : QL1       :                
+GND                          : N3        : gnd    :                   :         :           :                
+GND                          : N4        : gnd    :                   :         :           :                
+VCCA_GXB                     : N5        : power  :                   : 2.5V    :           :                
+GND                          : N6        : gnd    :                   :         :           :                
+VCCA                         : N7        : power  :                   : 2.5V    :           :                
+GND                          : N8        : gnd    :                   :         :           :                
+VCCINT                       : N9        : power  :                   : 1.2V    :           :                
+GND                          : N10       : gnd    :                   :         :           :                
+VCCINT                       : N11       : power  :                   : 1.2V    :           :                
+GND                          : N12       : gnd    :                   :         :           :                
+VCCINT                       : N13       : power  :                   : 1.2V    :           :                
+GND                          : N14       : gnd    :                   :         :           :                
+VCCINT                       : N15       : power  :                   : 1.2V    :           :                
+GND                          : N16       : gnd    :                   :         :           :                
+VCCINT                       : N17       : power  :                   : 1.2V    :           :                
+GND                          : N18       : gnd    :                   :         :           :                
+dataWriteRegisterOut[31]     : N19       : output : 2.5 V             :         : 6         : N              
+dataWriteRegisterOut[23]     : N20       : output : 2.5 V             :         : 6         : N              
+VCCIO6                       : N21       : power  :                   : 2.5V    : 6         :                
+wordInMemoryOut[24]          : N22       : output : 2.5 V             :         : 6         : N              
+dataWriteRegisterOut[29]     : N23       : output : 2.5 V             :         : 6         : N              
+wordInMemoryOut[11]          : N24       : output : 2.5 V             :         : 6         : N              
+GND+                         : N25       :        :                   :         : 6         :                
+GND+                         : N26       :        :                   :         : 6         :                
+GND                          : P1        : gnd    :                   :         :           :                
+GND                          : P2        : gnd    :                   :         :           :                
+GXB_NC                       : P3        :        :                   :         : QL0       :                
+GXB_NC                       : P4        :        :                   :         : QL0       :                
+VCCL_GXB                     : P5        : power  :                   : 1.2V    :           :                
+GND                          : P6        : gnd    :                   :         :           :                
+VCCA                         : P7        : power  :                   : 2.5V    :           :                
+VCCINT                       : P8        : power  :                   : 1.2V    :           :                
+GND                          : P9        : gnd    :                   :         :           :                
+VCCINT                       : P10       : power  :                   : 1.2V    :           :                
+GND                          : P11       : gnd    :                   :         :           :                
+VCCINT                       : P12       : power  :                   : 1.2V    :           :                
+GND                          : P13       : gnd    :                   :         :           :                
+VCCINT                       : P14       : power  :                   : 1.2V    :           :                
+GND                          : P15       : gnd    :                   :         :           :                
+VCCINT                       : P16       : power  :                   : 1.2V    :           :                
+GND                          : P17       : gnd    :                   :         :           :                
+VCCINT                       : P18       : power  :                   : 1.2V    :           :                
+dataRead2Out[7]              : P19       : output : 2.5 V             :         : 5         : N              
+ULAOut[0]                    : P20       : output : 2.5 V             :         : 5         : N              
+VCCIO5                       : P21       : power  :                   : 2.5V    : 5         :                
+GND                          : P22       : gnd    :                   :         :           :                
+mapControlOuput[8]           : P23       : output : 2.5 V             :         : 5         : N              
+mapControlOuput[4]           : P24       : output : 2.5 V             :         : 5         : N              
+GND                          : P25       : gnd    :                   :         :           :                
+GND+                         : P26       :        :                   :         : 5         :                
+GXB_GND*                     : R1        :        :                   :         : QL0       :                
+GXB_GND*                     : R2        :        :                   :         : QL0       :                
+GND                          : R3        : gnd    :                   :         :           :                
+GND                          : R4        : gnd    :                   :         :           :                
+VCCH_GXB                     : R5        : power  :                   : 2.5V    :           :                
+VCCD_PLL                     : R6        : power  :                   : 1.2V    :           :                
+VCCINT                       : R7        : power  :                   : 1.2V    :           :                
+GND                          : R8        : gnd    :                   :         :           :                
+VCCINT                       : R9        : power  :                   : 1.2V    :           :                
+GND                          : R10       : gnd    :                   :         :           :                
+VCCINT                       : R11       : power  :                   : 1.2V    :           :                
+GND                          : R12       : gnd    :                   :         :           :                
+VCCINT                       : R13       : power  :                   : 1.2V    :           :                
+GND                          : R14       : gnd    :                   :         :           :                
+VCCINT                       : R15       : power  :                   : 1.2V    :           :                
+GND                          : R16       : gnd    :                   :         :           :                
+VCCINT                       : R17       : power  :                   : 1.2V    :           :                
+GND                          : R18       : gnd    :                   :         :           :                
+dataRead2Out[30]             : R19       : output : 2.5 V             :         : 5         : N              
+ULAOut[2]                    : R20       : output : 2.5 V             :         : 5         : N              
+VCCIO5                       : R21       : power  :                   : 2.5V    : 5         :                
+ULAOut[1]                    : R22       : output : 2.5 V             :         : 5         : N              
+dataRead2Out[23]             : R23       : output : 2.5 V             :         : 5         : N              
+dataRead2Out[22]             : R24       : output : 2.5 V             :         : 5         : N              
+dataRead2Out[29]             : R25       : output : 2.5 V             :         : 5         : N              
+GND+                         : R26       :        :                   :         : 5         :                
+GND                          : T1        : gnd    :                   :         :           :                
+GND                          : T2        : gnd    :                   :         :           :                
+GXB_NC                       : T3        :        :                   :         : QL0       :                
+GXB_NC                       : T4        :        :                   :         : QL0       :                
+VCCA_GXB                     : T5        : power  :                   : 2.5V    :           :                
+VCCD_PLL                     : T6        : power  :                   : 1.2V    :           :                
+GND                          : T7        : gnd    :                   :         :           :                
+VCCINT                       : T8        : power  :                   : 1.2V    :           :                
+GXB_GND*                     : T9        :        :                   :         : 3B        :                
+GXB_GND*                     : T10       :        :                   :         : 3B        :                
+GND                          : T11       : gnd    :                   :         :           :                
+VCCINT                       : T12       : power  :                   : 1.2V    :           :                
+GND                          : T13       : gnd    :                   :         :           :                
+reset                        : T14       : input  : 2.5 V             :         : 3A        : N              
+clk                          : T15       : input  : 2.5 V             :         : 3A        : N              
+VCCINT                       : T16       : power  :                   : 1.2V    :           :                
+GND                          : T17       : gnd    :                   :         :           :                
+VCCINT                       : T18       : power  :                   : 1.2V    :           :                
+dataRead2Out[3]              : T19       : output : 2.5 V             :         : 5         : N              
+VCCIO5                       : T20       : power  :                   : 2.5V    : 5         :                
+dataRead2Out[5]              : T21       : output : 2.5 V             :         : 5         : N              
+dataRead2Out[17]             : T22       : output : 2.5 V             :         : 5         : N              
+dataRead2Out[4]              : T23       : output : 2.5 V             :         : 5         : N              
+ULAOut[3]                    : T24       : output : 2.5 V             :         : 5         : N              
+dataRead2Out[14]             : T25       : output : 2.5 V             :         : 5         : N              
+dataRead2Out[21]             : T26       : output : 2.5 V             :         : 5         : N              
+GXB_GND*                     : U1        :        :                   :         : QL0       :                
+GXB_GND*                     : U2        :        :                   :         : QL0       :                
+GND                          : U3        : gnd    :                   :         :           :                
+GND                          : U4        : gnd    :                   :         :           :                
+VCCL_GXB                     : U5        : power  :                   : 1.2V    :           :                
+GND                          : U6        : gnd    :                   :         :           :                
+VCCA                         : U7        : power  :                   : 2.5V    :           :                
+GND                          : U8        : gnd    :                   :         :           :                
+GXB_GND*                     : U9        :        :                   :         : 3B        :                
+GXB_GND*                     : U10       :        :                   :         : 3B        :                
+VCCINT                       : U11       : power  :                   : 1.2V    :           :                
+GND                          : U12       : gnd    :                   :         :           :                
+VCCINT                       : U13       : power  :                   : 1.2V    :           :                
+VCC_CLKIN3A                  : U14       : power  :                   : 2.5V    : 3A        :                
+VCCINT                       : U15       : power  :                   : 1.2V    :           :                
+GND                          : U16       : gnd    :                   :         :           :                
+VCCINT                       : U17       : power  :                   : 1.2V    :           :                
+GND                          : U18       : gnd    :                   :         :           :                
+dataRead2Out[10]             : U19       : output : 2.5 V             :         : 5         : N              
+VCCIO5                       : U20       : power  :                   : 2.5V    : 5         :                
+GND                          : U21       : gnd    :                   :         :           :                
+dataRead2Out[28]             : U22       : output : 2.5 V             :         : 5         : N              
+dataMemoryOut[26]            : U23       : output : 2.5 V             :         : 5         : N              
+ULAOut[4]                    : U24       : output : 2.5 V             :         : 5         : N              
+dataRead2Out[27]             : U25       : output : 2.5 V             :         : 5         : N              
+dataRead2Out[15]             : U26       : output : 2.5 V             :         : 5         : N              
+GND                          : V1        : gnd    :                   :         :           :                
+GND                          : V2        : gnd    :                   :         :           :                
+GXB_NC                       : V3        :        :                   :         : QL0       :                
+GXB_NC                       : V4        :        :                   :         : QL0       :                
+VCCH_GXB                     : V5        : power  :                   : 2.5V    :           :                
+VCCD_PLL                     : V6        : power  :                   : 1.2V    :           :                
+GND                          : V7        : gnd    :                   :         :           :                
+VCCINT                       : V8        : power  :                   : 1.2V    :           :                
+VCC_CLKIN3B                  : V9        : power  :                   : 2.5V    : 3B        :                
+VCCINT                       : V10       : power  :                   : 1.2V    :           :                
+GND                          : V11       : gnd    :                   :         :           :                
+VCCINT                       : V12       : power  :                   : 1.2V    :           :                
+GND                          : V13       : gnd    :                   :         :           :                
+VCCINT                       : V14       : power  :                   : 1.2V    :           :                
+GND                          : V15       : gnd    :                   :         :           :                
+VCCINT                       : V16       : power  :                   : 1.2V    :           :                
+GND                          : V17       : gnd    :                   :         :           :                
+VCCINT                       : V18       : power  :                   : 1.2V    :           :                
+GND                          : V19       : gnd    :                   :         :           :                
+VCCIO5                       : V20       : power  :                   : 2.5V    : 5         :                
+dataRead1Out[3]              : V21       : output : 2.5 V             :         : 5         : N              
+dataWriteRegisterOut[12]     : V22       : output : 2.5 V             :         : 5         : N              
+mapControlOuput[2]           : V23       : output : 2.5 V             :         : 5         : N              
+dataRead2Out[25]             : V24       : output : 2.5 V             :         : 5         : N              
+GND                          : V25       : gnd    :                   :         :           :                
+dataRead2Out[2]              : V26       : output : 2.5 V             :         : 5         : N              
+GXB_GND*                     : W1        :        :                   :         : QL0       :                
+GXB_GND*                     : W2        :        :                   :         : QL0       :                
+GND                          : W3        : gnd    :                   :         :           :                
+GND                          : W4        : gnd    :                   :         :           :                
+VCCA_GXB                     : W5        : power  :                   : 2.5V    :           :                
+VCCA                         : W6        : power  :                   : 2.5V    :           :                
+MSEL3                        : W7        :        :                   :         : 3         :                
+VCCIO3                       : W8        : power  :                   : 2.5V    : 3         :                
+VCCINT                       : W9        : power  :                   : 1.2V    :           :                
+GND                          : W10       : gnd    :                   :         :           :                
+VCCINT                       : W11       : power  :                   : 1.2V    :           :                
+GND                          : W12       : gnd    :                   :         :           :                
+VCCINT                       : W13       : power  :                   : 1.2V    :           :                
+GND                          : W14       : gnd    :                   :         :           :                
+VCCINT                       : W15       : power  :                   : 1.2V    :           :                
+GND                          : W16       : gnd    :                   :         :           :                
+VCCINT                       : W17       : power  :                   : 1.2V    :           :                
+GND                          : W18       : gnd    :                   :         :           :                
+VCCINT                       : W19       : power  :                   : 1.2V    :           :                
+GND                          : W20       : gnd    :                   :         :           :                
+VCCA                         : W21       : power  :                   : 2.5V    :           :                
+dataMemoryOut[2]             : W22       : output : 2.5 V             :         : 5         : N              
+mapControlOuput[5]           : W23       : output : 2.5 V             :         : 5         : N              
+dataRead2Out[1]              : W24       : output : 2.5 V             :         : 5         : N              
+dataRead2Out[16]             : W25       : output : 2.5 V             :         : 5         : N              
+dataRead2Out[0]              : W26       : output : 2.5 V             :         : 5         : N              
+GND                          : Y1        : gnd    :                   :         :           :                
+GND                          : Y2        : gnd    :                   :         :           :                
+GXB_NC                       : Y3        :        :                   :         : QL0       :                
+GXB_NC                       : Y4        :        :                   :         : QL0       :                
+VCCL_GXB                     : Y5        : power  :                   : 1.2V    :           :                
+MSEL2                        : Y6        :        :                   :         : 3         :                
+MSEL1                        : Y7        :        :                   :         : 3         :                
+GND                          : Y8        : gnd    :                   :         :           :                
+GND                          : Y9        : gnd    :                   :         :           :                
+VCCINT                       : Y10       : power  :                   : 1.2V    :           :                
+GND                          : Y11       : gnd    :                   :         :           :                
+VCCINT                       : Y12       : power  :                   : 1.2V    :           :                
+GND                          : Y13       : gnd    :                   :         :           :                
+VCCINT                       : Y14       : power  :                   : 1.2V    :           :                
+VCCIO4                       : Y15       : power  :                   : 2.5V    : 4         :                
+GND                          : Y16       : gnd    :                   :         :           :                
+GND                          : Y17       : gnd    :                   :         :           :                
+GND                          : Y18       : gnd    :                   :         :           :                
+VCCIO4                       : Y19       : power  :                   : 2.5V    : 4         :                
+VCCD_PLL                     : Y20       : power  :                   : 1.2V    :           :                
+ULAOut[29]                   : Y21       : output : 2.5 V             :         : 4         : N              
+dataMemoryOut[20]            : Y22       : output : 2.5 V             :         : 5         : N              
+dataMemoryOut[7]             : Y23       : output : 2.5 V             :         : 5         : N              
+dataMemoryOut[21]            : Y24       : output : 2.5 V             :         : 5         : N              
+dataRead2Out[20]             : Y25       : output : 2.5 V             :         : 5         : N              
+dataRead2Out[31]             : Y26       : output : 2.5 V             :         : 5         : N              

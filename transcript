@@ -1,0 +1,63 @@
+# Loading project MIPSTest
+# Compile of Control.vhd failed with 3 errors.
+# Compile of Memory.vhd failed with 3 errors.
+# Compile of MemoryInstruction.vhd failed with 3 errors.
+# Compile of MIPS.vhd failed with 3 errors.
+# Compile of MIPSPackage.vhd was successful.
+# Compile of MUX2.vhd was successful.
+# Compile of MUX5.vhd was successful.
+# Compile of Register1Bit.vhd was successful.
+# Compile of Register32Bits.vhd was successful.
+# Compile of RegisterBank.vhd was successful.
+# Compile of SetLessThan.vhd was successful.
+# Compile of ULA.vhd failed with 1 errors.
+# Compile of ULAControl.vhd was successful.
+# Compile of ULAControl2.vhd was successful.
+# 14 compiles, 5 failed with 13 errors.
+dataset reload -f
+# Dataset not found: 
+# Compile of Control.vhd was successful.
+# Compile of Memory.vhd was successful.
+# Compile of MemoryInstruction.vhd was successful.
+# Compile of MIPS.vhd failed with 1 errors.
+# Compile of MIPSPackage.vhd was successful.
+# Compile of MUX2.vhd was successful.
+# Compile of MUX5.vhd was successful.
+# Compile of Register1Bit.vhd was successful.
+# Compile of Register32Bits.vhd was successful.
+# Compile of RegisterBank.vhd was successful.
+# Compile of SetLessThan.vhd was successful.
+# Compile of ULA.vhd failed with 1 errors.
+# Compile of ULAControl.vhd was successful.
+# Compile of ULAControl2.vhd was successful.
+# 14 compiles, 2 failed with 2 errors.
+# Compile of Control.vhd was successful.
+# Compile of Memory.vhd was successful.
+# Compile of MemoryInstruction.vhd was successful.
+# Compile of MIPS.vhd failed with 1 errors.
+# Compile of MIPSPackage.vhd was successful.
+# Compile of MUX2.vhd was successful.
+# Compile of MUX5.vhd was successful.
+# Compile of Register1Bit.vhd was successful.
+# Compile of Register32Bits.vhd was successful.
+# Compile of RegisterBank.vhd was successful.
+# Compile of SetLessThan.vhd was successful.
+# Compile of ULA.vhd failed with 1 errors.
+# Compile of ULAControl.vhd was successful.
+# Compile of ULAControl2.vhd was successful.
+# 14 compiles, 2 failed with 2 errors.
+# Compile of Control.vhd was successful.
+# Compile of Memory.vhd was successful.
+# Compile of MemoryInstruction.vhd was successful.
+# Compile of MIPS.vhd failed with 1 errors.
+# Compile of MIPSPackage.vhd was successful.
+# Compile of MUX2.vhd was successful.
+# Compile of MUX5.vhd was successful.
+# Compile of Register1Bit.vhd was successful.
+# Compile of Register32Bits.vhd was successful.
+# Compile of RegisterBank.vhd was successful.
+# Compile of SetLessThan.vhd was successful.
+# Compile of ULA.vhd failed with 1 errors.
+# Compile of ULAControl.vhd was successful.
+# Compile of ULAControl2.vhd was successful.
+# 14 compiles, 2 failed with 2 errors.
